@@ -1,0 +1,51 @@
+body {
+    text-align: center;
+}
+
+/*================================title================================*/
+#title {
+    background-color: #317fa6;
+}
+
+.bg-nav {
+    background-color: #2c363f;
+}
+
+.title-row-padding {
+    padding: 7% 0 7%;
+    margin: 0;
+}
+
+.title-style {
+    padding: 5% 10% 5%;
+    margin: 0;
+    color:white;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.btn-title-style {
+    margin: 5% 3%;
+    /*background-color: #ff6978;
+    border-color: #ff6978;*/
+}
+
+
+.title-img {
+    width: 50%;
+}
+
+/*================================tutorial================================*/
+#tutorial {
+    background-color:#f5feff;
+}
+
+.tutorial-row-padding {
+    padding: 10% 2%;
+    margin: 0;
+}
+
+.tutorial-description {
+    padding: 2% 5%;
+    color: #2c363f;
+}
