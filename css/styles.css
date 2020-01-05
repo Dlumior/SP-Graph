@@ -35,17 +35,65 @@ body {
     width: 50%;
 }
 
+@media (max-width: 990px) {
+    .title-style {
+      font-size: 2rem;
+    }
+
+    .btn-title-style {
+        padding: 6px 12px;
+        margin: 2% 2% 7%;
+    }
+}
+
 /*================================tutorial================================*/
 #tutorial {
     background-color:#f5feff;
 }
 
 .tutorial-row-padding {
-    padding: 10% 2%;
+    padding: 5% 10% 3%;
     margin: 0;
 }
 
+
+.tutorial-image {
+    width: 30%;
+}
+
 .tutorial-description {
-    padding: 2% 5%;
+    padding: 5% 10%;
     color: #2c363f;
+    text-align: left;
+}
+
+.tutorial-hr {
+    border-width: 5pt;
+    border-color: #7dcbdf;
+    border-style: none;
+    border-top-style: dashed;
+    width: 90%;
+}
+
+@media (max-width: 990px) {
+    .tutorial-description {
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .tutorial-hr {
+        width: 60%;
+    }
+}
+
+/*================================contact-me================================*/
+#contact-me {
+    color: #f5feff;
+    background-color: #ff6978;
+    padding: 2%;
+}
+
+.contact-me-p {
+    margin: 0;
+    font-size: 10pt;
 }
