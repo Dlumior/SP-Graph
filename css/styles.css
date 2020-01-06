@@ -37,7 +37,7 @@ body {
 
 @media (max-width: 990px) {
     .title-style {
-      font-size: 2rem;
+      /*font-size: 2rem;*/
     }
 
     .btn-title-style {
@@ -78,7 +78,7 @@ body {
 @media (max-width: 990px) {
     .tutorial-description {
       text-align: center;
-      font-size: 1rem;
+      /*font-size: 1rem;*/
     }
 
     .tutorial-hr {
@@ -91,6 +91,18 @@ body {
     color: #f5feff;
     background-color: #ff6978;
     padding: 2%;
+}
+
+.footer-icons {
+    padding: 0 2% 2%;
+    color: #f5feff;
+    font-size: 1rem;
+}
+
+.footer-icons:hover {
+    color: #2c363f;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .contact-me-p {
