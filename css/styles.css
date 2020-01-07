@@ -7,6 +7,10 @@ body {
     background-color: #317fa6;
 }
 
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+}
 .bg-nav {
     background-color: #2c363f;
 }
@@ -56,9 +60,14 @@ body {
     margin: 0;
 }
 
+.carousel-item {
+    background-color: #2c363f;
+    border-radius: 20pt;
+}
 
 .tutorial-image {
-    width: 30%;
+    padding: 3% 2%;
+    width: 45%;
 }
 
 .tutorial-description {
