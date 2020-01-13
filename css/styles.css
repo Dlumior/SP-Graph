@@ -5,11 +5,10 @@ body {
 /*================================title================================*/
 #title {
     background-color: #317fa6;
-    height: 100vh;
 }
 
 .title-container {
-    position: relative;
+    /*position: relative;*/
 }
 
 .navbar-brand {
@@ -21,10 +20,14 @@ body {
 }
 
 .title-row-padding {
-    position: absolute;
+    /*position: absolute;
     top: 50vh;
     margin: 0;
     transform: translate(0%, -50%);
+    */
+    height: 100vh;
+    margin: 0;
+    padding-top: 25vh;
 }
 
 .title-style {
@@ -47,14 +50,18 @@ body {
 }
 
 @media (max-width: 990px) {
+    .title-row-padding {
+        padding-top: 0;
+    }
+
     .title-style {
       font-size: 1.5rem;
-      padding: 30% 10% 10%;
+      padding: 15% 10% 5%;
     }
 
     .btn-title-style {
         padding: 6px 12px;
-        margin: 2% 2% 10%;
+        margin: 5% 2%;
         font-size: 15px;
     }
 
