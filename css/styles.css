@@ -22,7 +22,7 @@ body {
 
 .title-row-padding {
     position: absolute;
-    top: 55vh;
+    top: 50vh;
     margin: 0;
     transform: translate(0%, -50%);
 }
@@ -49,11 +49,12 @@ body {
 @media (max-width: 990px) {
     .title-style {
       font-size: 1.5rem;
+      padding: 30% 10% 10%;
     }
 
     .btn-title-style {
         padding: 6px 12px;
-        margin: 2% 2% 7%;
+        margin: 2% 2% 10%;
         font-size: 15px;
     }
 
