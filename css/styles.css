@@ -8,6 +8,10 @@ body {
     height: 100vh;
 }
 
+.title-container {
+    position: relative;
+}
+
 .navbar-brand {
     font-size: 2rem;
     font-weight: bold;
@@ -17,8 +21,10 @@ body {
 }
 
 .title-row-padding {
-    padding: 13.5% 0;
+    position: absolute;
+    top: 55vh;
     margin: 0;
+    transform: translate(0%, -50%);
 }
 
 .title-style {
