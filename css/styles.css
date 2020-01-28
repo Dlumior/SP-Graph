@@ -9,10 +9,14 @@ body {
 
 .title-container {
     /*position: relative;*/
+    background-image: url('../images/bg-hero-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 215vh;
+    /*background-size: contain;*/
 }
 
 .navbar-brand {
-    font-size: 2rem;
+    /*font-size: 2rem;*/
     font-weight: bold;
 }
 .bg-nav {
@@ -27,7 +31,10 @@ body {
     */
     height: 100vh;
     margin: 0;
-    padding-top: 25vh;
+}
+
+.display-1 {
+    font-weight: bold;
 }
 
 .title-style {
@@ -52,6 +59,10 @@ body {
 @media (max-width: 990px) {
     .title-row-padding {
         padding-top: 0;
+    }
+
+    .display-1 {
+        font-size: 2rem;
     }
 
     .title-style {

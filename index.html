@@ -5,26 +5,14 @@
     <meta charset="UTF-8">
     <title>SP-Graph: Main Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!--CSS-->
     <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!--Scripts-->
-    <!--Bootstrap scripts-->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-        </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
-    <!--FontAwesome scripts-->
-    <script src="https://kit.fontawesome.com/6d9db4a1c6.js" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -32,7 +20,11 @@
     <section id="title">
         <div class="title-container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
-                <a class="navbar-brand" href="#">SP-GRAPH</a>
+                <a class="navbar-brand" href="#">
+                    <img src="images/SP-Graph-Logo-md.svg" width="30" height="30" alt="SP-Graph-Logo-md"
+                        class="d-inline-block align-top">
+                    SP-GRAPH
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -52,16 +44,26 @@
                 </div>
             </nav>
 
-            <div class="row title-row-padding">
-                <div class="col-lg-6">
-                    <h1 class="title-style">
-                        SP-Graph te ayuda a ver tu malla curricular de una forma gráfica e intuitiva
+            <div class="row align-items-center title-row-padding">
+                <div class="col-12 col-md-7 col-lg-6 order-lg-2 order-sm-1">
+                    <h1 class="display-1 text-center text-md-left">
+                        Bienvenidos a <br> <span class="text-light">SP-Graph</span>
                     </h1>
-                    <button type="button" class="btn btn-light btn-lg rounded-pill btn-title-style">Empezar a usar</button>
-                    <button type="button" class="btn btn-light btn-lg rounded-pill btn-title-style">Ver tutorial</button>
+                    <p class="lead text-center text-md-left mb-6 mb-lg-8">
+                        Tu malla curricular de forma gráfica e intuitiva
+                    </p>
+                    <div class="text-sm-center text-md-left">
+                        <button type="button" class="btn btn-dark btn-lg shadow lift mr-2">
+                            Empezar a usar
+                        </button>
+                        <button type="button" class="btn btn-light btn-lg shadow lift mr-2">
+                            Ver tutorial
+                        </button>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <img class="title-img" src="images/014-algorithm.svg" alt="014-algorithm">
+                <div class="col-12 col-md-5 col-lg-6 order-lg-1 order-sm-2">
+                    <img class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
+                        src="images/014-algorithm.svg" alt="014-algorithm">
                 </div>
             </div>
         </div>
@@ -146,6 +148,20 @@
         <p class="contact-me-p">© Copyright 2020 SP-GRAPH</p>
         <p class="contact-me-p">By Dlumior</p>
     </section>
+
+    <!--Scripts-->
+    <!--Bootstrap scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+    <!--FontAwesome scripts-->
+    <script src="https://kit.fontawesome.com/6d9db4a1c6.js" crossorigin="anonymous"></script>
 
 </body>
 
