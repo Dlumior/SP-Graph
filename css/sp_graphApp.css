@@ -1,11 +1,11 @@
 .links line {
-    stroke: blue;
-    stroke-width: 15;
-  }
+  stroke: blue;
+  stroke-width: 15;
+}
   
-  .nodes circle {
-    pointer-events: all;
-    stroke: none;
-    stroke-width: 40px;
-    fill : red;
-  }
+.nodes circle {
+  pointer-events: all;
+  stroke: none;
+  stroke-width: 40px;
+  fill : red;
+}
