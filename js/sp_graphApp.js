@@ -19,57 +19,132 @@ function changeSize() {
   return sizeAux;
 }
 
-console.log(changeSize());
-
 var width = changeSize()[0];
 var height = changeSize()[1];
 
 svg.attr("height",height);
 svg.attr("width",width);
 
-console.log(width);
-console.log(height);
+var r = 5;
 
-var r = 40;
+var ciclos = 2;
+var countCiclos = [];
+for (let index = 0; index < ciclos; index++) {
+  countCiclos.push(20);
+}
+var distMin = width/(ciclos+1);
 
 var graph = {
   "nodes": [{
-      "id": "A",
-      "group": 1
+      "id": "1MAT04",
+      "nombre": "Álgebra matricial y geometría analítica",
+      "creditos": 4.5,
+      "requisitos": [],
+      "ciclo": 1
     },
     {
-      "id": "B",
-      "group": 1
+      "id": "1MAT05",
+      "nombre": "Fundamentos del cálculo",
+      "creditos": 4.5,
+      "requisitos": [],
+      "ciclo": 1
     },
     {
-      "id": "C",
-      "group": 3
+      "id": "1FIS01",
+      "nombre": "Fundamentos de física",
+      "creditos": 3.5,
+      "requisitos": [],
+      "ciclo": 1
     },
     {
-      "id": "D",
-      "group": 4
+      "id": "1QUI01",
+      "nombre": "Química 1",
+      "creditos": 3.5,
+      "requisitos": [],
+      "ciclo": 1
+    },
+    {
+      "id": "1QUI02",
+      "nombre": "Química 1",
+      "creditos": 0.75,
+      "requisitos": ["1QUI01"],
+      "ciclo": 1
+    },
+    {
+      "id": "1LIN15",
+      "nombre": "Comunicación académica",
+      "creditos": 3.0,
+      "requisitos": [],
+      "ciclo": 1
+    },
+    {
+      "id": "1MAT06",
+      "nombre": "Cálculo diferencial",
+      "creditos": 4.5,
+      "requisitos": ["1MAT05", "1MAT04"],
+      "ciclo": 2
+    },
+    {
+      "id": "1FIS02",
+      "nombre": "Física 1",
+      "creditos": 4.5,
+      "requisitos": ["1MAT06", "1FIS01", "1FIS03"],
+      "ciclo": 2
+    },
+    {
+      "id": "1FIS03",
+      "nombre": "Laboratorio de física 1",
+      "creditos": 0.5,
+      "requisitos": ["1FIS02"],
+      "ciclo": 2
+    },
+    {
+      "id": "ING02",
+      "nombre": "Dibujo en ingeniería",
+      "creditos": 4.5,
+      "requisitos": ["1MAT04"],
+      "ciclo": 2
+    },
+    {
+      "id": "1LIN16",
+      "nombre": "Trabajo académico",
+      "creditos": 3.0,
+      "requisitos": ["1LIN15"],
+      "ciclo": 2
+    },
+    {
+      "id": "1FIL01",
+      "nombre": "Ciencia y filosofía",
+      "creditos": 3,
+      "requisitos": [],
+      "ciclo": 2
     }
   ],
   "links": [{
-      "source": "A",
-      "target": "C",
+      "source": "1QUI01",
+      "target": "1QUI02",
       "value": 1
     },
     {
-      "source": "B",
-      "target": "C",
+      "source": "1MAT06",
+      "target": "1MAT05",
       "value": 3
     },
     {
-      "source": "C",
-      "target": "D",
+      "source": "1MAT06",
+      "target": "1MAT04",
       "value": 2
     },
     {
-      "source": "D",
-      "target": "A",
+      "source": "1FIS02",
+      "target": "1MAT06",
       "value": 1
-    }
+    },
+    {
+      "source": "1FIS02",
+      "target": "1FIS01",
+      "value": 2
+    },
   ]
 }
 
@@ -116,13 +191,22 @@ node.append("title")
 
 var simulation = d3.forceSimulation()
   .force("link", d3.forceLink().id((d) => d.id))
-  .force("charge", d3.forceManyBody())
-  .force("collide", d3.forceCollide(r + 5))
-  .force("center", d3.forceCenter(width / 2, height / 2))
+  /*.force("charge", d3.forceManyBody())*/
+  .force("collide", d3.forceCollide(r + 2))
+  /*.force("center", d3.forceCenter(width / 2, height / 2))*/
   .on("tick", ticked);
 
   simulation
   .nodes(graph.nodes)
+  .force("x", d3.forceX( function(d){
+    console.log(d.nombre + ": "+ d.ciclo+"["+distMin*d.ciclo+"]");
+    return distMin*d.ciclo;
+  }))
+  .force("y", d3.forceY( function(d){
+    var aux = countCiclos[d.ciclo-1];
+    countCiclos[d.ciclo-1] += 50;
+    return aux;
+  }));
   simulation
   .force("link")
   .links(graph.links);
