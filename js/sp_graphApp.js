@@ -10,10 +10,10 @@ console.log(window.innerWidth);
 
 function changeSize() {
   var sizeAux = [];
-  if(window.innerWidth < 700) if(window.innerWidth < 350)sizeAux.push(250); else sizeAux.push(300);
-  else if(window.innerWidth < 800 || window.innerWidth < 1050) sizeAux.push(700); else sizeAux.push(1024);
+  if (window.innerWidth < 700) if (window.innerWidth < 350) sizeAux.push(250); else sizeAux.push(300);
+  else if (window.innerWidth < 800 || window.innerWidth < 1050) sizeAux.push(700); else sizeAux.push(1024);
 
-  if(window.innerHeight < 900) sizeAux.push(400);
+  if (window.innerHeight < 900) sizeAux.push(400);
   else sizeAux.push(750);
 
   return sizeAux;
@@ -22,122 +22,157 @@ function changeSize() {
 var width = changeSize()[0];
 var height = changeSize()[1];
 
-svg.attr("height",height);
-svg.attr("width",width);
+svg.attr("height", height);
+svg.attr("width", width);
 
-var r = 5;
+var r = 20;
 
-var ciclos = 2;
+var ciclos = 3;
 var countCiclos = [];
 for (let index = 0; index < ciclos; index++) {
   countCiclos.push(20);
 }
-var distMin = width/(ciclos+1);
+var distMin = width / (ciclos + 1);
+
+console.log(distMin);
 
 var graph = {
   "nodes": [{
-      "id": "1MAT04",
-      "nombre": "Álgebra matricial y geometría analítica",
-      "creditos": 4.5,
-      "requisitos": [],
-      "ciclo": 1
-    },
-    {
-      "id": "1MAT05",
-      "nombre": "Fundamentos del cálculo",
-      "creditos": 4.5,
-      "requisitos": [],
-      "ciclo": 1
-    },
-    {
-      "id": "1FIS01",
-      "nombre": "Fundamentos de física",
-      "creditos": 3.5,
-      "requisitos": [],
-      "ciclo": 1
-    },
-    {
-      "id": "1QUI01",
-      "nombre": "Química 1",
-      "creditos": 3.5,
-      "requisitos": [],
-      "ciclo": 1
-    },
-    {
-      "id": "1QUI02",
-      "nombre": "Química 1",
-      "creditos": 0.75,
-      "requisitos": ["1QUI01"],
-      "ciclo": 1
-    },
-    {
-      "id": "1LIN15",
-      "nombre": "Comunicación académica",
-      "creditos": 3.0,
-      "requisitos": [],
-      "ciclo": 1
-    },
-    {
-      "id": "1MAT06",
-      "nombre": "Cálculo diferencial",
-      "creditos": 4.5,
-      "requisitos": ["1MAT05", "1MAT04"],
-      "ciclo": 2
-    },
-    {
-      "id": "1FIS02",
-      "nombre": "Física 1",
-      "creditos": 4.5,
-      "requisitos": ["1MAT06", "1FIS01", "1FIS03"],
-      "ciclo": 2
-    },
-    {
-      "id": "1FIS03",
-      "nombre": "Laboratorio de física 1",
-      "creditos": 0.5,
-      "requisitos": ["1FIS02"],
-      "ciclo": 2
-    },
-    {
-      "id": "ING02",
-      "nombre": "Dibujo en ingeniería",
-      "creditos": 4.5,
-      "requisitos": ["1MAT04"],
-      "ciclo": 2
-    },
-    {
-      "id": "1LIN16",
-      "nombre": "Trabajo académico",
-      "creditos": 3.0,
-      "requisitos": ["1LIN15"],
-      "ciclo": 2
-    },
-    {
-      "id": "1FIL01",
-      "nombre": "Ciencia y filosofía",
-      "creditos": 3,
-      "requisitos": [],
-      "ciclo": 2
-    }
+    "id": "1MAT04",
+    "nombre": "Álgebra matricial y geometría analítica",
+    "creditos": 4.5,
+    "requisitos": [],
+    "ciclo": 1
+  },
+  {
+    "id": "1MAT05",
+    "nombre": "Fundamentos del cálculo",
+    "creditos": 4.5,
+    "requisitos": [],
+    "ciclo": 1
+  },
+  {
+    "id": "1FIS01",
+    "nombre": "Fundamentos de física",
+    "creditos": 3.5,
+    "requisitos": [],
+    "ciclo": 1
+  },
+  {
+    "id": "1QUI01",
+    "nombre": "Química 1",
+    "creditos": 3.5,
+    "requisitos": [],
+    "ciclo": 1
+  },
+  {
+    "id": "1QUI02",
+    "nombre": "Química 1",
+    "creditos": 0.75,
+    "requisitos": [],
+    "ciclo": 1
+  },
+  {
+    "id": "1LIN15",
+    "nombre": "Comunicación académica",
+    "creditos": 3.0,
+    "requisitos": [],
+    "ciclo": 1
+  },
+  {
+    "id": "1MAT06",
+    "nombre": "Cálculo diferencial",
+    "creditos": 4.5,
+    "requisitos": ["1MAT05"],
+    "ciclo": 2
+  },
+  {
+    "id": "1FIS02",
+    "nombre": "Física 1",
+    "creditos": 4.5,
+    "requisitos": ["1FIS01"],
+    "ciclo": 2
+  },
+  {
+    "id": "1FIS03",
+    "nombre": "Laboratorio de física 1",
+    "creditos": 0.5,
+    "requisitos": [],
+    "ciclo": 2
+  },
+  {
+    "id": "ING02",
+    "nombre": "Dibujo en ingeniería",
+    "creditos": 4.5,
+    "requisitos": ["1MAT04"],
+    "ciclo": 2
+  },
+  {
+    "id": "1LIN16",
+    "nombre": "Trabajo académico",
+    "creditos": 3.0,
+    "requisitos": ["1LIN15"],
+    "ciclo": 2
+  },
+  {
+    "id": "1FIL01",
+    "nombre": "Ciencia y filosofía",
+    "creditos": 3,
+    "requisitos": [],
+    "ciclo": 2
+  },
+  {
+    "id": "1MAT07",
+    "nombre": "Cálculo integral",
+    "creditos": 4.5,
+    "requisitos": ["1MAT06", "1MAT04"],
+    "ciclo": 3
+  },
+  {
+    "id": "1MAT08",
+    "nombre": "Cálculo en varias variables",
+    "creditos": 4.5,
+    "requisitos": [],
+    "ciclo": 3
+  },
+  {
+    "id": "1FIS04",
+    "nombre": "Física 2",
+    "creditos": 4.5,
+    "requisitos": ["1FIS02", "1FIS03"],
+    "ciclo": 3
+  },
+  {
+    "id": "1FIS05",
+    "nombre": "Laboratorio de física 2",
+    "creditos": 0.5,
+    "requisitos": [],
+    "ciclo": 3
+  },
+  {
+    "id": "1INF",
+    "nombre": "Fundamentos de programación",
+    "creditos": 3.0,
+    "requisitos": [],
+    "ciclo": 3
+  },
+  {
+    "id": "INF134",
+    "nombre": "Estructuras discretas",
+    "creditos": 4.5,
+    "requisitos": [],
+    "ciclo": 3
+  }
   ],
-  "links": [{
-      "source": "1QUI01",
-      "target": "1QUI02",
-      "value": 1
-    },
+  "links": [
     {
       "source": "1MAT06",
       "target": "1MAT05",
       "value": 3
     },
     {
-      "source": "1MAT06",
+      "source": "ING02",
       "target": "1MAT04",
-      "value": 2
-    },
-    {
-      "source": "1FIS02",
-      "target": "1MAT06",
       "value": 1
     },
     {
@@ -145,6 +180,31 @@ var graph = {
       "target": "1FIS01",
       "value": 2
     },
+    {
+      "source": "1LIN16",
+      "target": "1LIN15",
+      "value": 2
+    },
+    {
+      "source": "1MAT07",
+      "target": "1MAT04",
+      "value": 2
+    },
+    {
+      "source": "1MAT07",
+      "target": "1MAT06",
+      "value": 2
+    },
+    {
+      "source": "1FIS04",
+      "target": "1FIS02",
+      "value": 2
+    },
+    {
+      "source": "1FIS04",
+      "target": "1FIS03",
+      "value": 2
+    }
   ]
 }
 
@@ -185,8 +245,8 @@ var node = svg.append("g")
 */
 
 node.append("title")
-  .text(function(d) {
-    return d.id;
+  .text(function (d) {
+    return d.nombre;
   });
 
 var simulation = d3.forceSimulation()
@@ -196,42 +256,52 @@ var simulation = d3.forceSimulation()
   /*.force("center", d3.forceCenter(width / 2, height / 2))*/
   .on("tick", ticked);
 
-  simulation
+simulation
   .nodes(graph.nodes)
-  .force("x", d3.forceX( function(d){
-    console.log(d.nombre + ": "+ d.ciclo+"["+distMin*d.ciclo+"]");
-    return distMin*d.ciclo;
+  .force("x", d3.forceX(function (d) {
+    console.log(d.nombre + ": " + d.ciclo + "[" + distMin * d.ciclo + "]");
+    return distMin * d.ciclo;
   }))
-  .force("y", d3.forceY( function(d){
-    var aux = countCiclos[d.ciclo-1];
-    countCiclos[d.ciclo-1] += 50;
+  .force("y", d3.forceY(function (d) {
+    var aux = countCiclos[d.ciclo - 1];
+    countCiclos[d.ciclo - 1] += 100;
     return aux;
   }));
-  simulation
+
+simulation
   .force("link")
   .links(graph.links);
 
+simulation
+  .force("link")
+  .distance(function(d){
+    var distancia = Math.pow(d.target.x-d.source.x,2) + Math.pow(d.target.y - d.source.y,2);
+    distancia = Math.sqrt(distancia);
+    
+    return distMin * (d.source.ciclo);
+  });
+
 function ticked() {
   link
-    .attr("x1", function(d) {
+    .attr("x1", function (d) {
       return d.source.x;
     })
-    .attr("y1", function(d) {
+    .attr("y1", function (d) {
       return d.source.y;
     })
-    .attr("x2", function(d) {
+    .attr("x2", function (d) {
       return d.target.x;
     })
-    .attr("y2", function(d) {
+    .attr("y2", function (d) {
       return d.target.y;
     });
 
   //Para colocar el rectangulo cambiar al "cx" por "x", igual para "cy"
   node
-    .attr("cx", function(d) {
+    .attr("cx", function (d) {
       return d.x;
     })
-    .attr("cy", function(d) {
+    .attr("cy", function (d) {
       return d.y;
     });
 }
